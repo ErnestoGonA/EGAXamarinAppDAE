@@ -20,7 +20,8 @@ namespace EGAXamarinAppDAE.Data
         }
 
         public DBContext(DbContextOptions<DBContext> options) : base(options)
-        {}
+        {
+        }
 
         private async void EGAMetCrearDB()
         {
@@ -103,7 +104,6 @@ namespace EGAXamarinAppDAE.Data
             }
 
         }//AL CREAR EL MODELO
-
 
     }
 }
