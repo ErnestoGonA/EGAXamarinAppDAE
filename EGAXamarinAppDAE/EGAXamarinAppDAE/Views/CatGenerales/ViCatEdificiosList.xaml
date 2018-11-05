@@ -33,8 +33,8 @@
                 ColumnSizer="Star"
                 AutoGenerateColumns="False"
                 AllowSorting="False"
-                ItemsSource="{Binding FicSfDataGrid_ItemSource_Inventario}"
-                SelectedItem="{Binding FicSfDataGrid_SelectItem_Inventario}"
+                ItemsSource="{Binding FicSfDataGrid_ItemSource_CatEdificios}"
+                SelectedItem="{Binding FicSfDataGrid_SelectItem_CatEdificios}"
                 SelectionMode="Single">
                 <syncfusion:SfDataGrid.Columns x:TypeArguments="syncfusion:Columns">
                     <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="ID" MappingName="IdEdificio"/>

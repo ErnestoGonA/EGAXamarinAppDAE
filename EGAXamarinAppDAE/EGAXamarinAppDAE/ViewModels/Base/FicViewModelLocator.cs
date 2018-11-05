@@ -37,8 +37,8 @@ namespace EGAXamarinAppDAE.ViewModels.Base
             //FIC: se procede a registrar la interface con la que se comunican las ViewModels con los Servicios 
             //para poder ejecutar las tareas (metodos o funciones, etc) del servicio en cuestion.
             //---------------------------------------------------------------------------------------------------
-            FicContainerBuilder.RegisterType<FicSrvCatEdificiosList>().As<IFicSrvCatEdificiosList>().SingleInstance();
             FicContainerBuilder.RegisterType<FicSrvNavigationInventario>().As<IFicSrvNavigationInventario>().SingleInstance();
+            FicContainerBuilder.RegisterType<FicSrvCatEdificiosList>().As<IFicSrvCatEdificiosList>().SingleInstance();
             ////FicContainerBuilder.RegisterType<FicSrvInventariosList>().As<IFicSrvInventariosList>().SingleInstance();
             ////FicContainerBuilder.RegisterType<FicSrvInventariosConteosItem>().As<IFicSrvInventariosConteosItem>().SingleInstance();
             ////FicContainerBuilder.RegisterType<FicSrvInventariosConteoList>().As<IFicSrvInventariosConteoList>().SingleInstance();
@@ -60,6 +60,8 @@ namespace EGAXamarinAppDAE.ViewModels.Base
         {
             get { return FicIContainer.Resolve<FicVmCatEdificiosList>(); }
         }
+
+        //Agregar el de nuevo, agregar el de eliminar, agregar el de actualizar, agregar detralle
 
 
         ////public FicVmInventariosList FicVmInventariosList

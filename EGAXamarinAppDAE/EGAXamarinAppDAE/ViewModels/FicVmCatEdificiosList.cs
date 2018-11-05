@@ -16,25 +16,37 @@ namespace EGAXamarinAppDAE.ViewModels
 {
     public class FicVmCatEdificiosList : INotifyPropertyChanged
     {
-        public ObservableCollection<eva_cat_edificios> _FicSFDataGrid_ItemSource_Inventario;
-        public eva_cat_edificios _FicSfDataGrid_SelectItem_Inventario;
-        private ICommand _FicMetAddConteoICommand, _FicMetAcumuladosICommand;
+        
+         // Contiene la informacion para llenar el grid
+//        public ObservableCollection<eva_cat_edificios> _FicSFDataGrid_ItemSource_Inventario;
+        public ObservableCollection<eva_cat_edificios> _FicSFDataGrid_ItemSource_CatEdificios;
+
+        //public eva_cat_edificios _FicSfDataGrid_SelectItem_Inventario;
+        public eva_cat_edificios _FicSfDataGrid_SelectItem_CatEdificios;
+
+        //Botonoes nuevo, eliminar, editar
+        private ICommand _FicMetAddConteoICommand, _FicMetDeleteConteoICommand, _FicMetUpdateConteoICommand, _FicMetAcumuladosICommand;
 
         private IFicSrvNavigationInventario IFicSrvNavigationInventario;
+
         private IFicSrvCatEdificiosList IFicSrvCatEdificiosList;
 
         public FicVmCatEdificiosList(IFicSrvNavigationInventario IFicSrvNavigationInventario, IFicSrvCatEdificiosList IFicSrvCatEdificiosList)
         {
             this.IFicSrvNavigationInventario = IFicSrvNavigationInventario;
             this.IFicSrvCatEdificiosList = IFicSrvCatEdificiosList;
-            _FicSFDataGrid_ItemSource_Inventario = new ObservableCollection<eva_cat_edificios>();
+            //_FicSFDataGrid_ItemSource_Inventario = new ObservableCollection<eva_cat_edificios>();
+            _FicSFDataGrid_ItemSource_CatEdificios = new ObservableCollection<eva_cat_edificios>();
+
         }//constructor
 
         public ObservableCollection<eva_cat_edificios> FicSfDataGrid_ItemSource_Inventario
         {
             get
             {
-                return _FicSFDataGrid_ItemSource_Inventario;
+                //return _FicSFDataGrid_ItemSource_Inventario;
+                return _FicSFDataGrid_ItemSource_CatEdificios;
+
             }//Este apunta a travez del bindinfContect al grid de la view
         }
 
@@ -42,13 +54,16 @@ namespace EGAXamarinAppDAE.ViewModels
         {
             get
             {
-                return _FicSfDataGrid_SelectItem_Inventario;
+                //return _FicSfDataGrid_SelectItem_Inventario;
+                return _FicSfDataGrid_SelectItem_CatEdificios;
             }
             set
             {
                 if (value != null)
                 {
-                    _FicSfDataGrid_SelectItem_Inventario = value;
+                    //_FicSfDataGrid_SelectItem_Inventario = value;
+                    _FicSfDataGrid_SelectItem_CatEdificios = value;
+
                     RaisePropertyChanged();
                 }
             }
@@ -64,9 +79,11 @@ namespace EGAXamarinAppDAE.ViewModels
 
         private void FicMetAddConteo()
         {
-            if (_FicSfDataGrid_SelectItem_Inventario != null)
+            //if (_FicSfDataGrid_SelectItem_Inventario != null)
+            if (_FicSfDataGrid_SelectItem_CatEdificios != null)
             {
-                IFicSrvNavigationInventario.FicMetNavigateTo<FicVmCatEdificiosList>(_FicSfDataGrid_SelectItem_Inventario);
+                //IFicSrvNavigationInventario.FicMetNavigateTo<FicVmCatEdificiosList>(_FicSfDataGrid_SelectItem_Inventario);
+                IFicSrvNavigationInventario.FicMetNavigateTo<FicVmCatEdificiosList>(_FicSfDataGrid_SelectItem_CatEdificios);
             }
         }
 
@@ -80,9 +97,11 @@ namespace EGAXamarinAppDAE.ViewModels
 
         private void FicMetAcumulados()
         {
-            if (_FicSfDataGrid_SelectItem_Inventario != null)
+            //if (_FicSfDataGrid_SelectItem_Inventario != null)
+            if (_FicSfDataGrid_SelectItem_CatEdificios != null)
             {
-                IFicSrvNavigationInventario.FicMetNavigateTo<FicVmCatEdificiosList>(_FicSfDataGrid_SelectItem_Inventario);
+                //IFicSrvNavigationInventario.FicMetNavigateTo<FicVmCatEdificiosList>(_FicSfDataGrid_SelectItem_Inventario);
+                IFicSrvNavigationInventario.FicMetNavigateTo<FicVmCatEdificiosList>(_FicSfDataGrid_SelectItem_CatEdificios);
             }
         }
 
@@ -90,16 +109,17 @@ namespace EGAXamarinAppDAE.ViewModels
         {
             try
             {
-                //var source_local_inv = await IFicSrvCatEdificiosList.FicMetGetListInventarios();
-                //if (source_local_inv != null)
-                //{
-                //    foreach(eva_cat_edificios inv in source_local_inv)
-                //    {
-                //        _FicSFDataGrid_ItemSource_Inventario.Add(inv);
-                //    }
-                //}//Llenar el grid
+                var source_local_inv = await IFicSrvCatEdificiosList.FicMetGetListInventarios();
+                if (source_local_inv != null)
+                {
+                    foreach (eva_cat_edificios inv in source_local_inv)
+                    {
+                        //_FicSFDataGrid_ItemSource_Inventario.Add(inv);
+                        _FicSFDataGrid_ItemSource_CatEdificios.Add(inv);
+                    }
+                }//Llenar el grid
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 await new Page().DisplayAlert("ALERTA", e.Message.ToString(), "OK");
             }
