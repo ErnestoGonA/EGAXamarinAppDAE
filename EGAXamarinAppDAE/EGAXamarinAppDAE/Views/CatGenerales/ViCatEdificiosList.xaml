@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:syncfusion ="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"
+             x:Class="EGAXamarinAppDAE.Views.CatGenerales.ViCatEdificiosList">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem 
+            Name="Nuevo Edificio">
+        </ToolbarItem>
+        <ToolbarItem
+            Name="Editar Edificio"
+            ></ToolbarItem>
+        <ToolbarItem
+            Name="Detalle Edificio"
+            ></ToolbarItem>
+        <ToolbarItem
+            Name="Borrar Edificio"
+            ></ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout Padding="10"
+            >
+            <SearchBar
+                HorizontalOptions="FillAndExpand"
+                Placeholder="Filtrar informacion..."
+                PlaceholderColor="Red"
+                x:Name="SearchBar"
+                >
+            </SearchBar>
+            <syncfusion:SfDataGrid
+                VerticalOptions="FillAndExpand"
+                ColumnSizer="Star"
+                AutoGenerateColumns="False"
+                AllowSorting="False"
+                ItemsSource="{Binding FicSfDataGrid_ItemSource_Inventario}"
+                SelectedItem="{Binding FicSfDataGrid_SelectItem_Inventario}"
+                SelectionMode="Single">
+                <syncfusion:SfDataGrid.Columns x:TypeArguments="syncfusion:Columns">
+                    <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="ID" MappingName="IdEdificio"/>
+                    <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="DESCRIPCIÖN" MappingName="DesEdificio"/>
+                </syncfusion:SfDataGrid.Columns>
+            </syncfusion:SfDataGrid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
