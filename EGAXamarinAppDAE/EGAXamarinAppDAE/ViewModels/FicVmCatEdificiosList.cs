@@ -40,7 +40,7 @@ namespace EGAXamarinAppDAE.ViewModels
 
         }//constructor
 
-        public ObservableCollection<eva_cat_edificios> FicSfDataGrid_ItemSource_Inventario
+        public ObservableCollection<eva_cat_edificios> FicSfDataGrid_ItemSource_CatEdificios
         {
             get
             {
@@ -50,7 +50,7 @@ namespace EGAXamarinAppDAE.ViewModels
             }//Este apunta a travez del bindinfContect al grid de la view
         }
 
-        public eva_cat_edificios FicSfDataGrid_SelectItem_Inventario
+        public eva_cat_edificios FicSfDataGrid_SelectItem_CatEdificios
         {
             get
             {
