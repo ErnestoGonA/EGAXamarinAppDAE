@@ -17,7 +17,7 @@
                 </StackLayout>
 
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="Alias: " FontAttributes="Bold" FontSize="Micro"/>
+                    <Label Text="Id: " FontAttributes="Bold" FontSize="Micro"/>
                     <Label Text="{Binding LabelId}" FontSize="Micro" IsEnabled="False"/>
                 </StackLayout>
 
@@ -41,6 +41,35 @@
                     <Label Text="{Binding LabelClave}" FontSize="Micro"/>
                 </StackLayout>
 
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Fecha Reg: " FontAttributes="Bold" FontSize="Micro"/>
+                    <Label Text="{Binding LabelFechaReg}" FontSize="Micro"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Fecha Mod: " FontAttributes="Bold" FontSize="Micro"/>
+                    <Label Text="{Binding LabelFechaMod}" FontSize="Micro"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Usuario Reg: " FontAttributes="Bold" FontSize="Micro"/>
+                    <Label Text="{Binding LabelUsuarioReg}" FontSize="Micro"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Usuario Mod: " FontAttributes="Bold" FontSize="Micro"/>
+                    <Label Text="{Binding LabelUsuarioMod}" FontSize="Micro"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Activo: " FontAttributes="Bold" FontSize="Micro"/>
+                    <Label Text="{Binding LabelActivo}" FontSize="Micro"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Borrado: " FontAttributes="Bold" FontSize="Micro"/>
+                    <Label Text="{Binding LabelBorrado}" FontSize="Micro"/>
+                </StackLayout>
 
             </StackLayout>
         </StackLayout>
