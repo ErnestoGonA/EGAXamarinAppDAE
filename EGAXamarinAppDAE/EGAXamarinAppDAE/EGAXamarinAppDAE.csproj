@@ -29,6 +29,9 @@
     <EmbeddedResource Update="Views\CatGenerales\ViCatEdificiosList.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\CatGenerales\ViCatEdificiosUpdate.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\Navegacion\FicMasterPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>

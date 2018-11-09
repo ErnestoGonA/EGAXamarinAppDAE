@@ -18,6 +18,7 @@ namespace EGAXamarinAppDAE.Services.Navegacion
             //AQUI SE HACE UNA UNION ENTRE LA VM Y VI DE CADA VIEW DE LA APP
             { typeof(FicVmCatEdificiosList),typeof(ViCatEdificiosList) },
             { typeof(FicVmCatEdificiosInsert),typeof(ViCatEdificiosInsert) },
+            { typeof(FicVmCatEdificiosUpdate),typeof(ViCatEdificiosUpdate) },
 
             //{ typeof(FicVmInventariosList),typeof(FicViInventariosList) },
             //{ typeof(FicVmInventarioConteoList),typeof(FicViInventarioConteoList) },

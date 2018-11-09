@@ -10,7 +10,8 @@
         </ToolbarItem>
         <ToolbarItem
             Name="Editar Edificio"
-            ></ToolbarItem>
+             Command="{Binding FicMetUpdateEdificioICommand}">
+            </ToolbarItem>
         <ToolbarItem
             Name="Detalle Edificio"
             ></ToolbarItem>
