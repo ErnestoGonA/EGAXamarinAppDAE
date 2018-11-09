@@ -19,28 +19,28 @@
                 </StackLayout>
 
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="Alias: " FontAttributes="Bold" FontSize="Micro"/>
-                    <Entry Text="{Binding LabelId}" FontSize="Micro" IsEnabled="False"/>
-                </StackLayout>
-                
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="Alias: " FontAttributes="Bold" FontSize="Micro"/>
-                    <Entry Text="{Binding LabelAlias}" FontSize="Micro"/>
+                    <Label Text="ID: " FontAttributes="Bold" FontSize="Micro"/>
+                    <Entry Text="{Binding LabelId}" FontSize="Micro" IsEnabled="False" HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
 
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="DesEdificio: " FontAttributes="Bold" FontSize="Micro"/>
-                    <Entry Text="{Binding LabelDes}" FontSize="Micro"/>
+                    <Label Text="Alias: " FontAttributes="Bold" FontSize="Micro"/>
+                    <Entry Text="{Binding LabelAlias}" FontSize="Micro" HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                        <Label Text="DesEdificio: " FontAttributes="Bold" FontSize="Micro"/>
+                        <Entry Text="{Binding LabelDes}" FontSize="Micro" HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
 
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Prioridad: " FontAttributes="Bold" FontSize="Micro"/>
-                    <Entry Text="{Binding LabelPrioridad}" FontSize="Micro"/>
+                    <Entry Text="{Binding LabelPrioridad}" FontSize="Micro" HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
 
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Clave: " FontAttributes="Bold" FontSize="Micro"/>
-                    <Entry Text="{Binding LabelClave}" FontSize="Micro"/>
+                    <Entry Text="{Binding LabelClave}" FontSize="Micro" HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
 
                 <StackLayout Orientation="Horizontal" Padding="10">

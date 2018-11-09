@@ -14,29 +14,29 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout Padding="10" BackgroundColor="LightGray">
+            <StackLayout Padding="10" BackgroundColor="LightGray" Orientation="Vertical">
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Insertar edificio " FontAttributes="Bold" />
                 </StackLayout>
                 
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Alias: " FontAttributes="Bold" FontSize="Micro"/>
-                    <Entry Text="{Binding LabelAlias}" FontSize="Micro"/>
+                    <Entry Text="{Binding LabelAlias}" FontSize="Micro" HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
 
                 <StackLayout Orientation="Horizontal">
                     <Label Text="DesEdificio: " FontAttributes="Bold" FontSize="Micro"/>
-                    <Entry Text="{Binding LabelDes}" FontSize="Micro"/>
+                    <Entry Text="{Binding LabelDes}" FontSize="Micro" HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
 
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Prioridad: " FontAttributes="Bold" FontSize="Micro"/>
-                    <Entry Text="{Binding LabelPrioridad}" FontSize="Micro"/>
+                    <Entry Text="{Binding LabelPrioridad}" FontSize="Micro" HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
 
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Clave: " FontAttributes="Bold" FontSize="Micro"/>
-                    <Entry Text="{Binding LabelClave}" FontSize="Micro"/>
+                    <Entry Text="{Binding LabelClave}" FontSize="Micro" HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
 
                 <StackLayout Orientation="Horizontal" Padding="10">

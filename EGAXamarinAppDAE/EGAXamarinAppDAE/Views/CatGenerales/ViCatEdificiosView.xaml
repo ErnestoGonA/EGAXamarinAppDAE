@@ -18,57 +18,57 @@
 
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Id: " FontAttributes="Bold" FontSize="Micro"/>
-                    <Label Text="{Binding LabelId}" FontSize="Micro" IsEnabled="False"/>
+                    <Label Text="{Binding LabelId}" FontSize="Micro" IsEnabled="False" HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
 
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Alias: " FontAttributes="Bold" FontSize="Micro"/>
-                    <Label Text="{Binding LabelAlias}" FontSize="Micro"/>
+                    <Label Text="{Binding LabelAlias}" FontSize="Micro" HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
 
                 <StackLayout Orientation="Horizontal">
                     <Label Text="DesEdificio: " FontAttributes="Bold" FontSize="Micro"/>
-                    <Label Text="{Binding LabelDes}" FontSize="Micro"/>
+                    <Label Text="{Binding LabelDes}" FontSize="Micro" HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
 
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Prioridad: " FontAttributes="Bold" FontSize="Micro"/>
-                    <Label Text="{Binding LabelPrioridad}" FontSize="Micro"/>
+                    <Label Text="{Binding LabelPrioridad}" FontSize="Micro" HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
 
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Clave: " FontAttributes="Bold" FontSize="Micro"/>
-                    <Label Text="{Binding LabelClave}" FontSize="Micro"/>
+                    <Label Text="{Binding LabelClave}" FontSize="Micro" HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
 
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Fecha Reg: " FontAttributes="Bold" FontSize="Micro"/>
-                    <Label Text="{Binding LabelFechaReg}" FontSize="Micro"/>
+                    <Label Text="{Binding LabelFechaReg}" FontSize="Micro" HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
 
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Fecha Mod: " FontAttributes="Bold" FontSize="Micro"/>
-                    <Label Text="{Binding LabelFechaMod}" FontSize="Micro"/>
+                    <Label Text="{Binding LabelFechaMod}" FontSize="Micro" HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
 
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Usuario Reg: " FontAttributes="Bold" FontSize="Micro"/>
-                    <Label Text="{Binding LabelUsuarioReg}" FontSize="Micro"/>
+                    <Label Text="{Binding LabelUsuarioReg}" FontSize="Micro" HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
 
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Usuario Mod: " FontAttributes="Bold" FontSize="Micro"/>
-                    <Label Text="{Binding LabelUsuarioMod}" FontSize="Micro"/>
+                    <Label Text="{Binding LabelUsuarioMod}" FontSize="Micro" HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
 
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Activo: " FontAttributes="Bold" FontSize="Micro"/>
-                    <Label Text="{Binding LabelActivo}" FontSize="Micro"/>
+                    <Label Text="{Binding LabelActivo}" FontSize="Micro" HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
 
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Borrado: " FontAttributes="Bold" FontSize="Micro"/>
-                    <Label Text="{Binding LabelBorrado}" FontSize="Micro"/>
+                    <Label Text="{Binding LabelBorrado}" FontSize="Micro" HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
 
             </StackLayout>
