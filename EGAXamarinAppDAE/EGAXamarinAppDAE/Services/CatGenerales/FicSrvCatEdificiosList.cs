@@ -28,5 +28,10 @@ namespace EGAXamarinAppDAE.Services.CatGenerales
             return await (from inv in DBLoContext.eva_cat_edificios select inv).AsNoTracking().ToListAsync();
         }
 
+        public async Task<string> Remove_eva_cat_edificios(eva_cat_edificios eva_cat_edificios)
+        {
+            DBLoContext.Remove(eva_cat_edificios);
+            return await DBLoContext.SaveChangesAsync() > 0 ? "OK" : "ERROR AL ELIMINAR";
+        }
     }
 }

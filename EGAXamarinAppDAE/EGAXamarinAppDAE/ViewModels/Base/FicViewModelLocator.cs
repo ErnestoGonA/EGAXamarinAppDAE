@@ -29,6 +29,7 @@ namespace EGAXamarinAppDAE.ViewModels.Base
             FicContainerBuilder.RegisterType<FicVmCatEdificiosList>();
             FicContainerBuilder.RegisterType<FicVmCatEdificiosInsert>();
             FicContainerBuilder.RegisterType<FicVmCatEdificiosUpdate>();
+            FicContainerBuilder.RegisterType<FicVmCatEdificiosView>();
 
             ////FicContainerBuilder.RegisterType<FicVmInventariosList>();
             ////FicContainerBuilder.RegisterType<FicVmInventarioConteoList>();
@@ -74,6 +75,11 @@ namespace EGAXamarinAppDAE.ViewModels.Base
         public FicVmCatEdificiosUpdate FicVmCatEdificiosUpdate
         {
             get { return FicIContainer.Resolve<FicVmCatEdificiosUpdate>(); }
+        }
+
+        public FicVmCatEdificiosView FicVmCatEdificiosView
+        {
+            get { return FicIContainer.Resolve<FicVmCatEdificiosView>(); }
         }
 
         //Agregar el de nuevo, agregar el de eliminar, agregar el de actualizar, agregar detralle

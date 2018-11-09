@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EGAXamarinAppDAE.Views.CatGenerales.ViCatEdificiosView">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem 
+            Name="Regresar"
+            Command="{Binding FicMetRegesarCatEdificiosListICommand}">
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Padding="10" BackgroundColor="LightGray">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Detalles edificio " FontAttributes="Bold" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Alias: " FontAttributes="Bold" FontSize="Micro"/>
+                    <Label Text="{Binding LabelId}" FontSize="Micro" IsEnabled="False"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Alias: " FontAttributes="Bold" FontSize="Micro"/>
+                    <Label Text="{Binding LabelAlias}" FontSize="Micro"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="DesEdificio: " FontAttributes="Bold" FontSize="Micro"/>
+                    <Label Text="{Binding LabelDes}" FontSize="Micro"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Prioridad: " FontAttributes="Bold" FontSize="Micro"/>
+                    <Label Text="{Binding LabelPrioridad}" FontSize="Micro"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Clave: " FontAttributes="Bold" FontSize="Micro"/>
+                    <Label Text="{Binding LabelClave}" FontSize="Micro"/>
+                </StackLayout>
+
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

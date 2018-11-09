@@ -14,10 +14,12 @@
             </ToolbarItem>
         <ToolbarItem
             Name="Detalle Edificio"
-            ></ToolbarItem>
+            Command="{Binding FicMetViewEdificioICommand}">
+            </ToolbarItem>
         <ToolbarItem
             Name="Borrar Edificio"
-            ></ToolbarItem>
+            Command="{Binding FicMetRemoveEdificioICommand}">
+            </ToolbarItem>
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>

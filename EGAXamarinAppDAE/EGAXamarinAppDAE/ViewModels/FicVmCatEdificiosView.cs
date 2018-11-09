@@ -13,29 +13,25 @@ using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 using System.Linq;
-
-
 namespace EGAXamarinAppDAE.ViewModels
 {
-    public class FicVmCatEdificiosUpdate: INotifyPropertyChanged
+    public class FicVmCatEdificiosView: INotifyPropertyChanged
     {
 
         #region VARIABLES LOCALES
         private IFicSrvNavigationInventario IFicSrvNavigationInventario;
-        private IFicSrvCatEdificiosUpdate IFicSrvCatEdificiosUpdate;
 
         private string _LabelAlias, _LabelDes, _LabelClave;
-        private short _LabelId,_LabelPrioridad;
+        private short _LabelId, _LabelPrioridad;
 
-        private ICommand _FicMetRegesarCatEdificiosListICommand, _SaveCommand;
+        private ICommand _FicMetRegesarCatEdificiosListICommand;
 
         public object FicNavigationContextC { get; set; }
         #endregion
 
-        public FicVmCatEdificiosUpdate(IFicSrvNavigationInventario IFicSrvNavigationInventario,IFicSrvCatEdificiosUpdate IFicSrvCatEdificiosUpdate)
+        public FicVmCatEdificiosView(IFicSrvNavigationInventario IFicSrvNavigationInventario)
         {
             this.IFicSrvNavigationInventario = IFicSrvNavigationInventario;
-            this.IFicSrvCatEdificiosUpdate = IFicSrvCatEdificiosUpdate;
         }
 
         #region VARIABLES DE CONEXION A LA VIEW
@@ -144,47 +140,6 @@ namespace EGAXamarinAppDAE.ViewModels
             {
                 await new Page().DisplayAlert("ALERTA", e.Message.ToString(), "OK");
             }
-        }
-
-        public ICommand SaveCommand
-        {
-            get { return _SaveCommand = _SaveCommand ?? new FicVmDelegateCommand(SaveCommandExecute); }
-        }
-
-        private async void SaveCommandExecute()
-        {
-            var source_eva_cat_edificios = FicNavigationContextC as eva_cat_edificios;
-            try
-            {
-                var RespuestaInsert = await IFicSrvCatEdificiosUpdate.Update_eva_cat_edificios(new eva_cat_edificios()
-                {
-                    IdEdificio = source_eva_cat_edificios.IdEdificio,
-                    Alias = LabelAlias,
-                    DesEdificio = LabelDes,
-                    Prioridad = LabelPrioridad,
-                    Clave = LabelClave,
-                    FechaReg = source_eva_cat_edificios.FechaReg,
-                    FechaUltMod = DateTime.Now,
-                    UsuarioReg = source_eva_cat_edificios.UsuarioReg,
-                    UsuarioMod = "ERNESTO",
-                    Activo = "S",
-                    Borrado = "N"
-                });
-
-                if (RespuestaInsert == "OK")
-                {
-                    await new Page().DisplayAlert("ADD", "¡EDITADO CON EXITO!", "OK");
-                    IFicSrvNavigationInventario.FicMetNavigateTo<FicVmCatEdificiosList>(FicNavigationContextC);
-                }
-                else
-                {
-                    await new Page().DisplayAlert("ADD", RespuestaInsert.ToString(), "OK");
-                }//SE INSERTO EL CONTEO?
-            }
-            catch (Exception e)
-            {
-                await new Page().DisplayAlert("ALERTA", e.Message.ToString(), "OK");
-            }//MANEJO GLOBAL DE ERRORES
         }
 
         #endregion

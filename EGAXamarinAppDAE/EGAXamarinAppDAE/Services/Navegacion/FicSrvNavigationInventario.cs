@@ -19,6 +19,7 @@ namespace EGAXamarinAppDAE.Services.Navegacion
             { typeof(FicVmCatEdificiosList),typeof(ViCatEdificiosList) },
             { typeof(FicVmCatEdificiosInsert),typeof(ViCatEdificiosInsert) },
             { typeof(FicVmCatEdificiosUpdate),typeof(ViCatEdificiosUpdate) },
+            { typeof(FicVmCatEdificiosView),typeof(ViCatEdificiosView) },
 
             //{ typeof(FicVmInventariosList),typeof(FicViInventariosList) },
             //{ typeof(FicVmInventarioConteoList),typeof(FicViInventarioConteoList) },
