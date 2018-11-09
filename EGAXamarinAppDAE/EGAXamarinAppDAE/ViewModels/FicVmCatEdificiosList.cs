@@ -26,15 +26,19 @@ namespace EGAXamarinAppDAE.ViewModels
 
         //Botonoes nuevo, eliminar, editar
         private ICommand _FicMetAddConteoICommand, _FicMetDeleteConteoICommand, _FicMetUpdateConteoICommand, _FicMetAcumuladosICommand;
+        private ICommand _FicMetAddEdificioICommand;
 
         private IFicSrvNavigationInventario IFicSrvNavigationInventario;
 
         private IFicSrvCatEdificiosList IFicSrvCatEdificiosList;
 
-        public FicVmCatEdificiosList(IFicSrvNavigationInventario IFicSrvNavigationInventario, IFicSrvCatEdificiosList IFicSrvCatEdificiosList)
+        private IFicSrvCatEdificiosInsert IFicSrvCatEdificiosInsert;
+
+        public FicVmCatEdificiosList(IFicSrvNavigationInventario IFicSrvNavigationInventario, IFicSrvCatEdificiosList IFicSrvCatEdificiosList,IFicSrvCatEdificiosInsert IFicSrvCatEdificiosInsert)
         {
             this.IFicSrvNavigationInventario = IFicSrvNavigationInventario;
             this.IFicSrvCatEdificiosList = IFicSrvCatEdificiosList;
+            this.IFicSrvCatEdificiosInsert = IFicSrvCatEdificiosInsert;
             //_FicSFDataGrid_ItemSource_Inventario = new ObservableCollection<eva_cat_edificios>();
             _FicSFDataGrid_ItemSource_CatEdificios = new ObservableCollection<eva_cat_edificios>();
 
@@ -69,23 +73,40 @@ namespace EGAXamarinAppDAE.ViewModels
             }
         }//Este apunta a un item seleccionado en el grid de la view
 
-        public ICommand FicMetAddConteoICommand
+        //public ICommand FicMetAddConteoICommand
+        //{
+        //    get
+        //    {
+        //        return _FicMetAddConteoICommand = _FicMetAddConteoICommand ?? new FicVmDelegateCommand(FicMetAddConteo);
+        //    }
+        //}//Este evento agrega el comando al boton de la view
+
+        public ICommand FicMetAddEdificioICommand
         {
             get
             {
-                return _FicMetAddConteoICommand = _FicMetAddConteoICommand ?? new FicVmDelegateCommand(FicMetAddConteo);
-            }
-        }//Este evento agrega el comando al boton de la view
-
-        private void FicMetAddConteo()
-        {
-            //if (_FicSfDataGrid_SelectItem_Inventario != null)
-            if (_FicSfDataGrid_SelectItem_CatEdificios != null)
-            {
-                //IFicSrvNavigationInventario.FicMetNavigateTo<FicVmCatEdificiosList>(_FicSfDataGrid_SelectItem_Inventario);
-                IFicSrvNavigationInventario.FicMetNavigateTo<FicVmCatEdificiosList>(_FicSfDataGrid_SelectItem_CatEdificios);
+                return _FicMetAddEdificioICommand = _FicMetAddEdificioICommand ?? new FicVmDelegateCommand(FicMetAddEdificio);
             }
         }
+
+        private void FicMetAddEdificio()
+        {
+
+            IFicSrvNavigationInventario.FicMetNavigateTo<FicVmCatEdificiosInsert>();
+
+        }
+
+        //private void FicMetAddConteo()
+        //{
+        //    //if (_FicSfDataGrid_SelectItem_Inventario != null)
+        //    if (_FicSfDataGrid_SelectItem_CatEdificios != null)
+        //    {
+        //        //IFicSrvNavigationInventario.FicMetNavigateTo<FicVmCatEdificiosList>(_FicSfDataGrid_SelectItem_Inventario);
+        //        IFicSrvNavigationInventario.FicMetNavigateTo<FicVmCatEdificiosList>(_FicSfDataGrid_SelectItem_CatEdificios);
+        //    }
+        //}
+
+
 
         public ICommand FicMetAcumuladosICommand
         {

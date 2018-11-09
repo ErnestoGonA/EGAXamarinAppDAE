@@ -27,6 +27,7 @@ namespace EGAXamarinAppDAE.ViewModels.Base
             //---------------------------------------------------------------------------------------------------
             ///////////FicContainerBuilder.RegisterType<FicVmCatEdificiosList>();
             FicContainerBuilder.RegisterType<FicVmCatEdificiosList>();
+            FicContainerBuilder.RegisterType<FicVmCatEdificiosInsert>();
             ////FicContainerBuilder.RegisterType<FicVmInventariosList>();
             ////FicContainerBuilder.RegisterType<FicVmInventarioConteoList>();
             ////FicContainerBuilder.RegisterType<FicVmInventarioConteosItem>();
@@ -39,6 +40,7 @@ namespace EGAXamarinAppDAE.ViewModels.Base
             //---------------------------------------------------------------------------------------------------
             FicContainerBuilder.RegisterType<FicSrvNavigationInventario>().As<IFicSrvNavigationInventario>().SingleInstance();
             FicContainerBuilder.RegisterType<FicSrvCatEdificiosList>().As<IFicSrvCatEdificiosList>().SingleInstance();
+            FicContainerBuilder.RegisterType<FicSrvCatEdificiosInsert>().As<IFicSrvCatEdificiosInsert>().SingleInstance();
             ////FicContainerBuilder.RegisterType<FicSrvInventariosList>().As<IFicSrvInventariosList>().SingleInstance();
             ////FicContainerBuilder.RegisterType<FicSrvInventariosConteosItem>().As<IFicSrvInventariosConteosItem>().SingleInstance();
             ////FicContainerBuilder.RegisterType<FicSrvInventariosConteoList>().As<IFicSrvInventariosConteoList>().SingleInstance();
@@ -59,6 +61,11 @@ namespace EGAXamarinAppDAE.ViewModels.Base
         public FicVmCatEdificiosList FicVmCatEdificiosList
         {
             get { return FicIContainer.Resolve<FicVmCatEdificiosList>(); }
+        }
+
+        public FicVmCatEdificiosInsert FicVmCatEdificiosInsert
+        {
+            get { return FicIContainer.Resolve<FicVmCatEdificiosInsert>(); }
         }
 
         //Agregar el de nuevo, agregar el de eliminar, agregar el de actualizar, agregar detralle

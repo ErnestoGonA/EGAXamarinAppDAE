@@ -1,6 +1,8 @@
 ﻿using EGAXamarinAppDAE.Interfaces.Navegacion;
 using EGAXamarinAppDAE.ViewModels.Base;
+using EGAXamarinAppDAE.ViewModels;
 using EGAXamarinAppDAE.Views.CatGenerales;
+using EGAXamarinAppDAE.Views.Navegacion;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -14,6 +16,9 @@ namespace EGAXamarinAppDAE.Services.Navegacion
         private IDictionary<Type, Type> FicViewModelRouting = new Dictionary<Type, Type>()
         {
             //AQUI SE HACE UNA UNION ENTRE LA VM Y VI DE CADA VIEW DE LA APP
+            { typeof(FicVmCatEdificiosList),typeof(ViCatEdificiosList) },
+            { typeof(FicVmCatEdificiosInsert),typeof(ViCatEdificiosInsert) },
+
             //{ typeof(FicVmInventariosList),typeof(FicViInventariosList) },
             //{ typeof(FicVmInventarioConteoList),typeof(FicViInventarioConteoList) },
             //{ typeof(FicVmInventarioConteosItem),typeof(FicViInventarioConteosItem) },

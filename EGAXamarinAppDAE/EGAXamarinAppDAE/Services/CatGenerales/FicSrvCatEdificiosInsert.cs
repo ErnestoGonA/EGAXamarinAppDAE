@@ -12,20 +12,27 @@ using Xamarin.Forms;
 
 namespace EGAXamarinAppDAE.Services.CatGenerales
 {
-    class FicSrvCatEdificiosList : IFicSrvCatEdificiosList
+    public class FicSrvCatEdificiosInsert : IFicSrvCatEdificiosInsert
     {
 
         private readonly DBContext DBLoContext;
 
-        public FicSrvCatEdificiosList()
+        public FicSrvCatEdificiosInsert()
         {
             DBLoContext = new DBContext(DependencyService.Get<ConfigSQLite>().EGAGetDataBasePath());
         }
 
-        public async Task<IEnumerable<eva_cat_edificios>> FicMetGetListInventarios()
+        public async Task<string> Insert_eva_cat_edificios(eva_cat_edificios eva_cat_edificios)
         {
-            //Aqui se hace la consulta a la base de datos
-            return await (from inv in DBLoContext.eva_cat_edificios select inv).AsNoTracking().ToListAsync();
+            try
+            {
+                await DBLoContext.AddAsync(eva_cat_edificios);
+                return await DBLoContext.SaveChangesAsync() > 0 ? "OK" : "ERROR AL REGISTRAR";
+            }
+            catch (Exception ex)
+            {
+                return ex.Message.ToString();
+            }
         }
 
     }

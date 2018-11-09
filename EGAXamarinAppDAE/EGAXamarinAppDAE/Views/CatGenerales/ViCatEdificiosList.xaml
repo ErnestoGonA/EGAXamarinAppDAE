@@ -5,7 +5,8 @@
              x:Class="EGAXamarinAppDAE.Views.CatGenerales.ViCatEdificiosList">
     <ContentPage.ToolbarItems>
         <ToolbarItem 
-            Name="Nuevo Edificio">
+            Name="Nuevo Edificio"
+             Command="{Binding FicMetAddEdificioICommand}">
         </ToolbarItem>
         <ToolbarItem
             Name="Editar Edificio"
@@ -38,6 +39,7 @@
                 SelectionMode="Single">
                 <syncfusion:SfDataGrid.Columns x:TypeArguments="syncfusion:Columns">
                     <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="ID" MappingName="IdEdificio"/>
+                    <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="ALIAS" MappingName="Alias"/>
                     <syncfusion:GridTextColumn HeaderFontAttribute="Bold" HeaderText="DESCRIPCIÖN" MappingName="DesEdificio"/>
                 </syncfusion:SfDataGrid.Columns>
             </syncfusion:SfDataGrid>

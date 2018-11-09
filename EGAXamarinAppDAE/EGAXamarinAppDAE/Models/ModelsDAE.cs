@@ -14,7 +14,7 @@ namespace EGAXamarinAppDAE.Models
     [Table("eva_cat_edificios")]
     public class eva_cat_edificios
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Key,DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Int16 IdEdificio { get; set; }
         [MaxLength(10)]
         public string Alias { get; set; }
