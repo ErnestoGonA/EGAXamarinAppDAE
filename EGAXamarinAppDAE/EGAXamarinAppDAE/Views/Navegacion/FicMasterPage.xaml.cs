@@ -33,7 +33,11 @@ namespace EGAXamarinAppDAE.Views.Navegacion
                     case "ViCatEdificiosList":
                         FicItemMenu.TargetType = typeof(ViCatEdificiosList);
                         break;
-                    
+
+                    case "ViCatEdificiosImportarExportar":
+                        FicItemMenu.TargetType = typeof(ViCatEdificiosImportarExportar);
+                        break;
+
                     default:
                         break;
                 }

@@ -30,6 +30,7 @@ namespace EGAXamarinAppDAE.ViewModels.Base
             FicContainerBuilder.RegisterType<FicVmCatEdificiosInsert>();
             FicContainerBuilder.RegisterType<FicVmCatEdificiosUpdate>();
             FicContainerBuilder.RegisterType<FicVmCatEdificiosView>();
+            FicContainerBuilder.RegisterType<FicVmCatEdificiosImportarExportar>();
 
             ////FicContainerBuilder.RegisterType<FicVmInventariosList>();
             ////FicContainerBuilder.RegisterType<FicVmInventarioConteoList>();
@@ -45,6 +46,7 @@ namespace EGAXamarinAppDAE.ViewModels.Base
             FicContainerBuilder.RegisterType<FicSrvCatEdificiosList>().As<IFicSrvCatEdificiosList>().SingleInstance();
             FicContainerBuilder.RegisterType<FicSrvCatEdificiosInsert>().As<IFicSrvCatEdificiosInsert>().SingleInstance();
             FicContainerBuilder.RegisterType<FicSrvCatEdificiosUpdate>().As<IFicSrvCatEdificiosUpdate>().SingleInstance();
+            FicContainerBuilder.RegisterType<FicSrvCatEdificiosImportarExportar>().As<IFicSrvCatEdificiosImportarExportar>().SingleInstance();
             ////FicContainerBuilder.RegisterType<FicSrvInventariosList>().As<IFicSrvInventariosList>().SingleInstance();
             ////FicContainerBuilder.RegisterType<FicSrvInventariosConteosItem>().As<IFicSrvInventariosConteosItem>().SingleInstance();
             ////FicContainerBuilder.RegisterType<FicSrvInventariosConteoList>().As<IFicSrvInventariosConteoList>().SingleInstance();
@@ -80,6 +82,11 @@ namespace EGAXamarinAppDAE.ViewModels.Base
         public FicVmCatEdificiosView FicVmCatEdificiosView
         {
             get { return FicIContainer.Resolve<FicVmCatEdificiosView>(); }
+        }
+
+        public FicVmCatEdificiosImportarExportar FicVmCatEdificiosImportarExportar
+        {
+            get { return FicIContainer.Resolve<FicVmCatEdificiosImportarExportar>(); }
         }
 
         //Agregar el de nuevo, agregar el de eliminar, agregar el de actualizar, agregar detralle

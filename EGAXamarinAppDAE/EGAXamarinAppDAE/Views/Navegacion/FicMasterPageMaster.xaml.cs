@@ -36,16 +36,16 @@ namespace EGAXamarinAppDAE.Views.Navegacion
             {
                 MenuItems = new ObservableCollection<FicMasterPageMenuItem>(new[]
                 {
-                    new FicMasterPageMenuItem { Id = 0, Title = "Lista de Inventarios",
+                    new FicMasterPageMenuItem { Id = 0, Title = "Edificios",
                                                 Icon ="ficAlmacen20x20.png",
                                                 FicPageName ="ViCatEdificiosList",
                                                 TargetType = typeof(ViCatEdificiosList)
                                                 },
-                    //new FicMasterPageMenuItem { Id = 0, Title = "Importacion Web Api",
-                    //                            Icon ="ficAlmacen20x20.png",
-                    //                            FicPageName ="FicViImportarWebApi",
-                    //                            //TargetType = typeof(FicViImportarWebApi)
-                    //                            },
+                    new FicMasterPageMenuItem { Id = 0, Title = "Importar/Exportar",
+                                                Icon ="ficAlmacen20x20.png",
+                                                FicPageName ="FicViCatEdificiosImportarExportar",
+                                                TargetType = typeof(ViCatEdificiosImportarExportar)
+                                                },
                     //new FicMasterPageMenuItem { Id = 0, Title = "Exportar Web Api",
                     //                            Icon ="ficAlmacen20x20.png",
                     //                            FicPageName ="FicViExportarWebApi",
