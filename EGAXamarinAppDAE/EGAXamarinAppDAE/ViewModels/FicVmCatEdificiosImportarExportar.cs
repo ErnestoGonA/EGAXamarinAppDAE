@@ -76,9 +76,11 @@ namespace EGAXamarinAppDAE.ViewModels
         {
             try
             {
-                var res = await IFicSrvCatEdificiosImportarExportar.Exportar_eva_cat_edificios();
+                string res = await IFicSrvCatEdificiosImportarExportar.Exportar_eva_cat_edificios();
 
-                if (res == "OK")
+                System.Diagnostics.Debug.WriteLine("res\n"+res);
+
+                if (res =="OK")
                 {
                     await new Page().DisplayAlert("Exportar", "Exportacion exitosa!", "OK");
                 }

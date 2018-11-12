@@ -45,9 +45,11 @@ namespace EGAXamarinAppDAE.Services.CatGenerales
                         {
                             try
                             {
-                                DBLoContext.Update(edificio);
-                                DBLoContext.Entry(edificio).State = EntityState.Detached;
+
+                                DBLoContext.Entry(existe).State = EntityState.Detached;
+                                DBLoContext.Entry(edificio).State = EntityState.Modified;
                                 await DBLoContext.SaveChangesAsync();
+                                DBLoContext.Entry(edificio).State = EntityState.Detached;
                             }
                             catch (Exception e)
                             {
@@ -60,8 +62,8 @@ namespace EGAXamarinAppDAE.Services.CatGenerales
                             try
                             {
                                 DBLoContext.Add(edificio);
-                                DBLoContext.Entry(edificio).State = EntityState.Detached;
                                 await DBLoContext.SaveChangesAsync();
+                                DBLoContext.Entry(edificio).State = EntityState.Detached;
                             }
                             catch (Exception e)
                             {
@@ -100,14 +102,22 @@ namespace EGAXamarinAppDAE.Services.CatGenerales
         {
             try
             {
-                List<eva_cat_edificios> list = await (from inv in DBLoContext.eva_cat_edificios select inv).AsNoTracking().ToListAsync();
-                return await DBLoContext.SaveChangesAsync() > 0 ? "OK" : "ERROR AL REGISTRAR";
+                List<eva_cat_edificios> list = await (from CE in DBLoContext.eva_cat_edificios select CE).AsNoTracking().ToListAsync();
+                return await PutCatEdificiosAPI(list);
             }
             catch (Exception e)
             {
                 return e.Message.ToString();
             }
 
+        }
+
+        private async Task<string> PutCatEdificiosAPI(List<eva_cat_edificios> list)
+        {
+            string url = "http://localhost:51777/api/edificios";
+            HttpResponseMessage res = await Client.PutAsync(new Uri(string.Format(url, string.Empty)),
+                new StringContent(JsonConvert.SerializeObject(list), Encoding.UTF8, "application/json"));
+            return  res.IsSuccessStatusCode ? "OK" : "ERROR";
         }
 
     }

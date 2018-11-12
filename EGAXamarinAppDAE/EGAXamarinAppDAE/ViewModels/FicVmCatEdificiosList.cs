@@ -144,7 +144,6 @@ namespace EGAXamarinAppDAE.ViewModels
                     var res = await IFicSrvCatEdificiosList.Remove_eva_cat_edificios(FicSfDataGrid_SelectItem_CatEdificios);
                     if (res == "OK")
                     {
-                        await new Page().DisplayAlert("Delete", "¡ELIMINADO CON EXITO!", "OK");
                         IFicSrvNavigationInventario.FicMetNavigateTo<FicVmCatEdificiosList>();
                     }
                     else

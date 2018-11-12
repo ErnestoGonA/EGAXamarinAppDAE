@@ -27,7 +27,9 @@ namespace EGAXamarinAppDAE.Services.CatGenerales
             try
             {
                 await DBLoContext.AddAsync(eva_cat_edificios);
-                return await DBLoContext.SaveChangesAsync() > 0 ? "OK" : "ERROR AL REGISTRAR";
+                var res = await DBLoContext.SaveChangesAsync() > 0 ? "OK" : "ERROR AL REGISTRAR";
+                DBLoContext.Entry(eva_cat_edificios).State = EntityState.Detached;
+                return res;
             }
             catch (Exception ex)
             {
