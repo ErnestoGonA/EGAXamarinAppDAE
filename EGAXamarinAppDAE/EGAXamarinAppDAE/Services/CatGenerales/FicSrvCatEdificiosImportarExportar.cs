@@ -46,10 +46,12 @@ namespace EGAXamarinAppDAE.Services.CatGenerales
                             try
                             {
                                 DBLoContext.Update(edificio);
+                                DBLoContext.Entry(edificio).State = EntityState.Detached;
                                 await DBLoContext.SaveChangesAsync();
                             }
                             catch (Exception e)
                             {
+                                System.Diagnostics.Debug.WriteLine("Exception\n"+e.Message.ToString());
                                 return e.Message.ToString();
                             }
                         }
@@ -58,10 +60,12 @@ namespace EGAXamarinAppDAE.Services.CatGenerales
                             try
                             {
                                 DBLoContext.Add(edificio);
+                                DBLoContext.Entry(edificio).State = EntityState.Detached;
                                 await DBLoContext.SaveChangesAsync();
                             }
                             catch (Exception e)
-                            {                                 
+                            {
+                                System.Diagnostics.Debug.WriteLine("ExceptionI\n" + e.Message.ToString());
                                 return e.Message.ToString();
                             }
                         }
@@ -89,7 +93,6 @@ namespace EGAXamarinAppDAE.Services.CatGenerales
         {
             string url = "http://localhost:51777/api/edificios";
             var res = await Client.GetAsync(url);
-            System.Diagnostics.Debug.WriteLine("CONTENT\n"+await res.Content.ReadAsStringAsync());
             return res.IsSuccessStatusCode ? JsonConvert.DeserializeObject<List<eva_cat_edificios>>(await res.Content.ReadAsStringAsync()) : null;
         }
 
